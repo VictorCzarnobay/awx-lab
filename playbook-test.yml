@@ -1,1 +1,4 @@
-#teste
+- name: check3
+  hosts: all
+  command: systemctl status ssh
+  ignore_errors: yes
