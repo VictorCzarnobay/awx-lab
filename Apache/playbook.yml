@@ -40,8 +40,8 @@
       when: disable_default
       notify: Reload Apache
 
-    - name: UFW Allow HTTP on port {{ http_port }}
-      ufw:
+    - name: "UFW - Allow HTTP on port {{ http_port }}"
+      community.general.ufw:
         rule: allow
         port: "{{ http_port }}"
         proto: tcp
