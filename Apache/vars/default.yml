@@ -1,0 +1,6 @@
+---
+app_user: "victor"
+http_host: "lab_page"
+http_conf: "lab_page.conf"
+http_port: "80"
+disable_default: true

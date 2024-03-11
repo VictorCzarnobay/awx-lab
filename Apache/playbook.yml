@@ -2,8 +2,7 @@
 # DO Community Playbooks: Apache on Ubuntu 18.04
 ##################################################
 ---
-- hosts: all
-  become: true
+- hosts: [web_servers]
   vars_files:
     - vars/default.yml
 
