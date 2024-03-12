@@ -1,5 +1,7 @@
 ---
 - hosts: [db_servers]
+  collections:
+    - community.postgresql
 
   vars_files:
     - /Postgre/vars.yml
@@ -33,7 +35,7 @@
         - postgresql
 
     - name: "Create app database"
-      community.postgresql.postgresql_db:
+      postgresql_db:
         state: present
         name: "{{ db_name }}"
       become: yes
