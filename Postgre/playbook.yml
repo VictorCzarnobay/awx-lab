@@ -9,7 +9,8 @@
       apt: "name={{ item }} state=present"
       with_items:
         - postgresql
-        - postgresql-server
+        - libpq-dev
+#        - postgresql-server
 
     - name: "Install Python packages"
       apt: "name={{ item }}  state=present"
