@@ -36,7 +36,7 @@
         - postgresql
 
     - name: "Create app database"
-      community.postgresql.postgresql_db:
+      community.general.postgresql_db:
         state: present
         name: "{{ db_name }}"
       become: yes
