@@ -3,6 +3,7 @@
   collections:
     - community.postgresql
     - community.general
+  become: yes
 
   vars_files:
     - vars.yml
