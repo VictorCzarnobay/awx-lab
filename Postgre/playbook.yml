@@ -43,6 +43,8 @@
       become: yes
       become_method: sudo
       become_user: postgres
+      vars:
+        allow_world_readable_tmpfiles: true
 
     - name: "Create db user"
       postgresql_user:
