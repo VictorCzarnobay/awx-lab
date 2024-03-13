@@ -74,6 +74,7 @@
         users: "{{ db_user }}"
         create: true
       become: yes
+      become_method: sudo
       become_user: postgres
       notify: restart postgres
 
