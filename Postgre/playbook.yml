@@ -41,15 +41,16 @@
         state: present
         name: "{{ db_name }}"
       become: yes
-      become_user: postgres
+      become_method: sudo
+      become_user: root
 
     - name: "Create db user"
       postgresql_user:
         state: present
         name: "{{ db_user }}"
         password: "{{ db_password }}"
-#      become: yes
-#      become_user: postgres
+      become: yes
+      become_user: postgres
 
     - name: "Grant db user access to app db"
       postgresql_privs:
