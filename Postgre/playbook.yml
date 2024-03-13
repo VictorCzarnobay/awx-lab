@@ -2,7 +2,7 @@
 - hosts: [db_servers]
   collections:
 #    - community.postgresql
-    - community.general
+#    - community.general
 
   vars_files:
     - /Postgre/vars.yml
@@ -41,6 +41,8 @@
         name: "{{ db_name }}"
       become: yes
       become_user: postgres
+      collections:
+        -community.postgresql
 
 #    - name: "Create db user"
 #      postgresql_user:
