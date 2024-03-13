@@ -42,7 +42,7 @@
       become: yes
       become_user: postgres
       collections:
-        -community.postgresql
+        - community.postgresql
 
 #    - name: "Create db user"
 #      postgresql_user:
