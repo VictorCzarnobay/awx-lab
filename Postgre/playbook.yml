@@ -36,13 +36,11 @@
         - postgresql
 
     - name: "Create app database"
-      postgresql_db:
+      community.postgresql.postgresql_db:
         state: present
         name: "{{ db_name }}"
       become: yes
       become_user: postgres
-      collections:
-        - community.postgresql
 
 #    - name: "Create db user"
 #      postgresql_user:
