@@ -2,6 +2,7 @@
 - hosts: [db_servers]
   collections:
     - community.postgresql
+    - community.general
 
   vars_files:
     - /Postgre/vars.yml
