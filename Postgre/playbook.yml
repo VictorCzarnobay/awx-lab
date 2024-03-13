@@ -5,7 +5,7 @@
     - community.general
 
   vars_files:
-    - /Postgre/vars/defaults.yml
+    - vars.yml
 
   pre_tasks:
     - name: "Install packages"
