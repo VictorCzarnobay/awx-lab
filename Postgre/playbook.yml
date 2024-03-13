@@ -75,7 +75,7 @@
         create: true
       become: yes
       become_method: sudo
-      become_user: postgres
+      become_user: "{{ user_login }}"
       notify: restart postgres
 
     - name: "Add some dummy data to our database"
