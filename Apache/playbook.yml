@@ -18,7 +18,7 @@
       apt: name=libapache2-mod-php update_cache=yes state=latest
 
     - name: Install PGSQL package
-      apt: php-pgsql update_cache=yes state=latest
+      apt: php8.1-pgsql state=present
 
     - name: Create document root
       file:
