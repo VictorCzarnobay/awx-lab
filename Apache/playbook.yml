@@ -14,6 +14,9 @@
     - name: Install Apache
       apt: name=apache2 update_cache=yes state=latest
 
+    - name: Install php
+      apt: name=libapache2-mod-php update_cache=yes state=latest
+
     - name: Create document root
       file:
         path: "/var/www/{{ http_host }}"
