@@ -15,7 +15,6 @@
         - postgresql
         - libpq-dev
         - acl
-#        - postgresql-server
 
     - name: "Install Python packages"
       apt: "name={{ item }}  state=present"
@@ -27,10 +26,6 @@
       ansible.builtin.stat:
         path: "/var/lib/pgsql/data/pg_hba.conf"
       register: postgres_data
-
-#    - name: "Initialize PostgreSQL"
-#      shell: "postgresql-setup initdb"
-#      when: not postgres_data.stat.exists
 
     - name: "Start and enable services"
       service: "name={{ item }} state=started enabled=yes"
@@ -78,7 +73,7 @@
       become_user: "{{ user_login }}"
       notify: restart postgres
 
-    - name: "Add some dummy data to our database"
+    - name: "Add data to db"
       become: true
       become_user: postgres
       shell: psql {{ db_name }} < /tmp/dump.sql
