@@ -1,16 +1,9 @@
-##################################################
-# DO Community Playbooks: Apache on Ubuntu 18.04
-##################################################
 ---
 - hosts: [web_servers]
   vars_files:
     - vars/default.yml
 
   tasks:
-    - name: Install prerequisites
-      apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
-      loop: [ 'aptitude' ]
-
     - name: Install Apache
       apt: name=apache2 update_cache=yes state=latest
 
@@ -47,12 +40,6 @@
       shell: /usr/sbin/a2dissite 000-default.conf
       when: disable_default
       notify: Reload Apache
-
-#    - name: "UFW - Allow HTTP on port {{ http_port }}"
-#      community.general.ufw:
-#        rule: allow
-#        port: "{{ http_port }}"
-#        proto: tcp
 
   handlers:
     - name: Reload Apache
